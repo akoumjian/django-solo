@@ -8,10 +8,11 @@ class Post(models.Model):
     """
     An article or page.
     """
-    pubdate = models.DateTimeField()
-    modified = models.DateTimeField()
+    pubdate = models.DateTimeField(blank=True)
+    modified = models.DateTimeField(blank=True)
     public = models.BooleanField(default=False)
     title = models.CharField(max_length=100)
+    tagline = models.CharField(max_length=100)
     body = models.TextField()
     body_html = models.TextField(editable=False, blank=True, null=True)
     slug = AutoSlugField(populate_from='title', unique=True,

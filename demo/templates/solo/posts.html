@@ -1,12 +1,19 @@
+{% extends 'base.html' %}
 {% block content %}
-
 {% for post in posts.object_list %}
-<p>{{post.title}}</p>
-<p>{{post.modified}}</p>
-<p>{{post.body_html|safe}}</p>
-<br />
+    <article>
+    <header>
+        <hgroup>
+            <h1>{{post.title}}</h1>
+            <h2>{{post.tagline}}</h2>
+            <time datetime="{{post.modified|date:"c"}}" pubdate>{{ post.modified|date:"D d M Y" }}</time>
+        </hgroup>
+    </header>
+    {{post.body_html|safe}}
+    </article>
+{% endfor %}
 
-<div class="pagination">
+<nav>
     <span class="step-links">
         {% if posts.has_previous %}
             <a href="?page={{ posts.previous_page_number }}">previous</a>
@@ -20,7 +27,5 @@
             <a href="?page={{ posts.next_page_number }}">next</a>
         {% endif %}
     </span>
-</div>
-{% endfor %}
-
+</nav>
 {% endblock %}

@@ -42,7 +42,7 @@ TEMPLATE_DIRS = (
 )
 
 STATICFILES_DIRS = (
-    os.path.join(SITE_ROOT, 'ninu/static'),
+    # os.path.join(SITE_ROOT, 'solo/static'),
 )
 
 # List of finder classes that know how to find static files in
@@ -81,6 +81,9 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'django.contrib.admin',
+    'django.contrib.admindocs',
+    'markitup',
+    'south',
     'solo',
 )
 
@@ -101,3 +104,9 @@ LOGGING = {
         },
     }
 }
+
+
+MARKITUP_SET = 'markitup/sets/markdown'
+MARKITUP_FILTER = ('markdown.markdown', {'safe_mode': False})
+MARKITUP_PREVIEW_FILTER = MARKITUP_FILTER
+MARKITUP_PREVIEW_TEMPLATE = 'solo/preview.html'
