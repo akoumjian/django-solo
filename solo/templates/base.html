@@ -3,11 +3,10 @@
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
   <title>{% block title %}akoumjian.com{% endblock %}</title>
   <link href='http://fonts.googleapis.com/css?family=Lato:400,700,400italic' rel='stylesheet' type='text/css'>
-  <link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}solo/css/solo.css" />
+  <link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}css/style.css" />
   <link rel="shortcut icon" href="{{ STATIC_URL }}favicon.ico" />
   <link rel="author" href="mailto:akoumjian@gmail.com" />
 </head>
-
 <body>
 <header>
     <hgroup>
@@ -17,7 +16,9 @@
 </header>
 <nav>
 </nav>
+<section class="content">
 {% block content %}
 {% endblock %}
+</section>
 </body>
 </html>

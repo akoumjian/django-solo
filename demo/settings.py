@@ -38,7 +38,7 @@ SITE_ROOT = os.path.dirname(os.path.realpath(__file__))
 MEDIA_ROOT = os.path.join(SITE_ROOT, 'media')
 STATIC_ROOT = os.path.join(SITE_ROOT, 'static')
 TEMPLATE_DIRS = (
-    os.path.join(SITE_ROOT, 'templates'),
+    # os.path.join(SITE_ROOT, 'templates'),
 )
 
 STATICFILES_DIRS = (
@@ -50,7 +50,7 @@ STATICFILES_DIRS = (
 STATICFILES_FINDERS = (
     'django.contrib.staticfiles.finders.FileSystemFinder',
     'django.contrib.staticfiles.finders.AppDirectoriesFinder',
-#    'django.contrib.staticfiles.finders.DefaultStorageFinder',
+   # 'django.contrib.staticfiles.finders.DefaultStorageFinder',
 )
 
 # Make this unique, and don't share it with anybody.

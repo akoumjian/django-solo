@@ -1,4 +1,4 @@
-from django.shortcuts import render_to_response
+from django.shortcuts import render
 from django.core.paginator import Paginator, InvalidPage, EmptyPage
 from solo.models import Post
 
@@ -25,7 +25,7 @@ def page(request, page_number=False, slug=False):
     except (EmptyPage, InvalidPage):
         some_posts = paginator.page(paginator.num_pages)
 
-    return render_to_response('solo/posts.html', {'posts': some_posts})
+    return render(request, 'posts.html', {'posts': some_posts})
 
 
 def detail(request, slug):
