@@ -85,6 +85,7 @@ INSTALLED_APPS = (
     'markitup',
     'south',
     'solo',
+    'demo',
 )
 
 LOGGING = {

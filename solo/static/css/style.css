@@ -6,9 +6,49 @@ body {
     width: 100%;
 }
 
+h1.site-header {
+	float: left;
+	width: 300px;
+}
+
+div.page {
+	max-width: 900px;
+    margin: 0px 20px 0px 300px;
+}
+
 section.content {
     text-align: left;
-    width: 80%;
-    max-width: 960px;
-    margin: 0 auto;
+}
+
+nav ul li a {
+	text-decoration: none;
+	color: #000;
+}
+
+nav ul li {
+	border-left: 5px solid;
+	float: left;
+	padding: 6 60 6 15;
+	margin: 0 0 0 0;
+}
+
+nav ul li.blog {
+	border-color: #E4FF19;
+}
+
+nav ul li.blog:hover {
+	background-color: #F6FFB2;
+}
+
+nav ul li.about {
+	border-color: #0080FF;
+}
+nav ul li.about:hover {
+	background-color: #7FBFFF;
+}
+
+nav ul {
+	overflow: hidden;
+	margin: 0;
+	padding: 0;
 }

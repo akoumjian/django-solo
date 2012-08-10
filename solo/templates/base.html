@@ -8,17 +8,18 @@
   <link rel="author" href="mailto:akoumjian@gmail.com" />
 </head>
 <body>
-<header>
-    <hgroup>
-    <h1>akoumjian.com</h1>
-    <h2>"Blurbs in space and time."</h2>
-    </hgroup>
-</header>
-<nav>
-</nav>
-<section class="content">
-{% block content %}
-{% endblock %}
-</section>
+  <h1 class="site-header">akoumjian.com</h1>
+  <div class="page">
+    <nav>
+      <ul>
+        <li class="blog"><a href="/">Blog</a></li>
+        <li class="about"><a href="/about/">About</a></li>
+      <ul>
+    </nav>
+    <section class="content">
+    {% block content %}
+    {% endblock %}
+    </section>
+  </div>
 </body>
 </html>
