@@ -1,6 +1,31 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect, get_object_or_404
 from django.core.paginator import Paginator, InvalidPage, EmptyPage
 from solo.models import Post
+from solo.forms import PostForm
+
+
+def add(request, template_name='solo/edit.html'):
+    """
+    Create a new post
+    """
+    form = PostForm(request.POST or None)
+    if form.is_valid():
+        post = form.save()
+        return redirect('edit', slug=post.slug)
+
+    return render(request, template_name, {'form': form})
+
+
+def edit(request, slug=None, template_name='solo/edit.html'):
+    """
+    Form view for editing a post.
+    """
+    post = get_object_or_404(Post, slug=slug)
+    form = PostForm(request.POST or None, instance=post)
+    if form.is_valid():
+        post = form.save()
+
+    return render(request, template_name, {'form': form, 'post': post})
 
 
 def page(request, page_number=False, slug=False):

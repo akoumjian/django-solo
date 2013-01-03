@@ -1,0 +1,33 @@
+/* Based on highlight.js's github theme */
+
+.cm-s-github.CodeMirror {
+  color: #333;
+  background: #f8f8ff
+}
+.cm-s-github div.CodeMirror-selected {background: #49483E !important;}
+.cm-s-github .CodeMirror-gutters {background: #272822; border-right: 0px;}
+.cm-s-github .CodeMirror-linenumber {color: #d0d0d0;}
+.cm-s-github .CodeMirror-cursor {border-left: 1px solid #f8f8f0 !important;}
+
+.cm-s-github span.cm-comment {color: #998;}
+.cm-s-github span.cm-atom {color: #ae81ff;}
+.cm-s-github span.cm-number {color: #099;}
+
+.cm-s-github span.cm-property {color: #000080;}
+.cm-s-github span.cm-attribute {color: #008080;}
+.cm-s-github span.cm-keyword {color: #000080;}
+.cm-s-github span.cm-string {color: #d14;}
+
+.cm-s-github span.cm-variable {color: #008080}
+.cm-s-github span.cm-variable-2 {color: #008080}
+
+.cm-s-github span.cm-def {color: #000080;}
+.cm-s-github span.cm-error {background: #f92672; color: #f8f8f0;}
+.cm-s-github span.cm-bracket {color: #f8f8f2;}
+.cm-s-github span.cm-tag {color: #f92672;}
+.cm-s-github span.cm-link {color: #ae81ff;}
+
+.cm-s-github .CodeMirror-matchingbracket {
+  text-decoration: underline;
+  /*color: white !important;*/
+}

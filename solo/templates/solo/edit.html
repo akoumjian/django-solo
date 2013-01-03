@@ -1,0 +1,51 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+  <meta charset="UTF-8">
+
+  <title>{{ post.title|default:"New Post"}}</title>
+  <link rel="shortcut icon" href="favicon.ico">
+  <link rel="stylesheet" href="{{ STATIC_URL }}css/style.css">
+  <link rel="stylesheet" href="{{ STATIC_URL }}css/solo.css">
+  <!-- <link rel="stylesheet" href="{{ STATIC_URL }}CodeMirror-3.0/lib/codemirror.css"> -->
+  <link rel="stylesheet" href="{{ STATIC_URL }}CodeMirror-3.0/theme/monokai.css">
+  <link rel="stylesheet" href="{{ STATIC_URL }}highlight.js/styles/monokai.css">
+</head>
+<body>
+  <div class="errors">{{form.errors}}</div>  
+  <form action="{% if post %}{% url edit slug=post.slug %}{% else %}{% url add %}{% endif %}" method="post">{% csrf_token %}
+    <div class="context">
+      <ul>
+        {% if post.modified %}<li>Modified: {{ post.modified }}</li>{% endif %}
+        <li>{{ form.pubdate.label }}:{{ form.pubdate }}</li>
+        <li>{{ form.public.label }}:{{ form.public }}</li>
+      </ul>
+      <input type="submit" value="save" /> 
+      <button id="preview-toggle" type="button">Toggle Preview</button>
+    </div>
+    <div class="content">
+      {{ form.body_markdown }}
+      {{ form.body_html.as_hidden }}
+      <div class="preview post" id="preview"></div>
+    </div>
+  </form>
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+  <script src="{{ STATIC_URL }}marked-0.2.6/lib/marked.js"></script>
+  <script src="{{ STATIC_URL }}CodeMirror-3.0/lib/codemirror.js"></script>
+  <script src="{{ STATIC_URL }}CodeMirror-3.0/lib/util/overlay.js"></script>
+  <script src="{{ STATIC_URL }}CodeMirror-3.0/mode/markdown/markdown.js"></script>
+  <script src="{{ STATIC_URL }}CodeMirror-3.0/mode/gfm/gfm.js"></script>
+  <script src="{{ STATIC_URL }}CodeMirror-3.0/mode/python/python.js"></script>
+  <script src="{{ STATIC_URL }}highlight.js/highlight.pack.js"></script>
+  <script src="{{ STATIC_URL }}js/solo.js"></script>
+  <script>
+    var solo = Solo({
+      'markdown': jQuery("#id_body_markdown")[0],
+      'html': jQuery("#id_body_html")[0],
+      'preview': jQuery("#preview")[0],
+      'toggleButton': jQuery("#preview-toggle")[0]
+    });
+  </script>
+
+</body>
+</html>

@@ -4,7 +4,7 @@
     <article>
     <header>
         <hgroup>
-            <h1>{{post.title}}</h1>
+            <h1><a href="/{{post.slug}}/">{{post.title}}</a></h1>
             <h2>{{post.tagline}}</h2>
             <time datetime="{{post.modified|date:"c"}}" pubdate>{{ post.modified|date:"D d M Y" }}</time>
         </hgroup>

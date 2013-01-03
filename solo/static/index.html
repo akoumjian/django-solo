@@ -1,0 +1,53 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+  <meta charset="UTF-8">
+
+  <title>Markdown Edit</title>
+  <link rel="shortcut icon" href="favicon.ico">
+  <link rel="stylesheet" href="js/CodeMirror-3.0/lib/codemirror.css">
+  <link rel="stylesheet" href="js/CodeMirror-3.0/theme/solarized.css">
+  <link rel="stylesheet" href="js/highlight.js/styles/github.css">
+</head>
+<body>
+  <textarea id="markdown">
+# Solo Edit
+
+
+### Viewer
+To display converted HTML like Github, Markdown-Edit apply github.css from highlight.js.
+
+```python
+def foo(bar):
+    """a python docstring"""
+    return bar*bar
+```
+
+#### Save to local
+This feature is not implemented yet.
+
+#### Auto Reload
+If you **checked** Auto Reload.<br>Document will convert into html per 5second if it was changed.
+
+#### shortcut keys
+If you **checked** Enable Shortcut Key.<br>These shortcut will be enable.
+
+
+
+  </textarea>
+  <div id="preview"></div><!-- /converted html will be here -->
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+  <script src="js/marked-0.2.6/lib/marked.js"></script>
+  <script src="js/CodeMirror-3.0/lib/codemirror.js"></script>
+  <script src="js/CodeMirror-3.0/lib/util/overlay.js"></script>
+  <script src="js/CodeMirror-3.0/mode/markdown/markdown.js"></script>
+  <script src="js/CodeMirror-3.0/mode/gfm/gfm.js"></script>
+  <script src="js/CodeMirror-3.0/mode/python/python.js"></script>
+  <script src="js/highlight.js/highlight.pack.js"></script>
+  <script src="js/solo.js"></script>
+  <script>
+    var solo = Solo({'markdown': $("#markdown")[0], 'preview': $("#preview")[0]});
+  </script>
+
+</body>
+</html>
